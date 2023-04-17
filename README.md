@@ -14,7 +14,14 @@
 11. Select project to install
 
 ## How to test projects in gitpod
-1.
+1. In terminal type => os test
+2. Select bootcamp session
+3. Select project to test
+
+## How to submit projects in gitpod
+1.In terminal, type => os sumbit
+2. Select bootcamp session
+3. Select project to sumbit
 
 ## First Website Project
 1. Only complete up to Todo 10

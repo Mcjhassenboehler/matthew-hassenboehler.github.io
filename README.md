@@ -20,12 +20,17 @@
 3. Select project to test
 
 ## How to submit projects in gitpod
-1.In terminal, type => os sumbit
+1. In terminal, type => os sumbit
 2. Select bootcamp session
 3. Select project to sumbit
 
 ## How to push work to github
-1.
+1. In terminal, type => git add -A
+2. In terminal, type => git commit -m "description of the commit"
+3. In terminal, type => git push
 
 ## First Website Project
 1. Only complete up to Todo 10
+
+## Portfolio Page
+1. Only complete up to Todo 6

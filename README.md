@@ -8,6 +8,7 @@
 5. Open a new terminal
 6.In terminal, type => sudo apt-get install subversion
 7.In terminal, type => npm install -g opspark
+7.5. In terminal, type => os install
 8. Enter Github username
 9. Enter personal access token
 10. Select Bootcamp session
@@ -22,6 +23,9 @@
 1.In terminal, type => os sumbit
 2. Select bootcamp session
 3. Select project to sumbit
+
+## How to push work to github
+1.
 
 ## First Website Project
 1. Only complete up to Todo 10

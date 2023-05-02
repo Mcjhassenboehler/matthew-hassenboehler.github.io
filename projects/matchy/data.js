@@ -11,28 +11,39 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var animal = {};
+animal.species = 'Dog';
+animal['name'] = 'Woofer';
+animal['noises'] = [];
+console.log(animal);
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var noises = [];
+noises[0] = 'Woof';
+noises.push('Bark');
+noises.unshift('Growl');
+noises.push('Yelp');
+console.log(noises.length);
+console.log(noises[3]);
+console.log(noises);
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+animal['noises'] = noises;
+animal.noises[4] = 'Cry';
+console.log(animal);
 
 
 /* *******************************************************************
  * Step 4 - Review
  *
  * 1. What are the different ways you can access properties on objects?
- *
+ *  object.key for dot notation, object['key'] for bracket
  * 2. What are the different ways of accessing elements on arrays?
- *
+ * array[index] for bracket
  * *******************************************************************
  */
 
@@ -48,14 +59,41 @@
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var animals = [];
+animals.push(animal);        
+console.log(animals);
+var duck = {
+  species: 'Duck',
+  name: 'Jerome',
+  noises: ['quack', 'honk', 'sneeze', 'woosh']
+};
+animals.push(duck);
+console.log(animals)
+var capybara = {
+  species: 'Capybara',
+  name: 'Blap',
+  noises: ['scream', 'yell']
+};
+animals.push(capybara);
+var cow = {
+  species: 'Cow',
+  name: 'Sir Loin',
+  noises: ['moo', 'moo but loud']
+};
+animals.push(cow);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+// I'll be using an Array since it is a collection of objects
+var friends = [];
+function getRandom(animals){
+  return Math.random(animals);  // 0
+}
+friends.push('Woofer');
+console.log(friends);
+animals[1].friends = friends;
+console.log(animals);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and

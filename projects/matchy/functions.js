@@ -28,7 +28,7 @@ function search(animals, string){
 function replace(animals, name, replacement){
      for (var i = 0; i < animals.length; i++){
             if (animals[i].name === name){
-                animals.splice(animals[i], 1, replacement);
+                animals.splice(i, 1, replacement);
 
             }
 }

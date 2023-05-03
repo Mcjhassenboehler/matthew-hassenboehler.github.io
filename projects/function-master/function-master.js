@@ -102,20 +102,24 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-    if (Object.values(object).indexOf('test1') > -1){
-       var arrNoise = Object.values(object)
-       var stringNoise = arrNoise.toString(' ')
-       return stringNoise 
+    if (!object.noises || object.noises.length === 0){
+        return 'there are no noises'
     }
-    return 'there are no noises'
-}
+    return object.noises.join(' ');
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+    var arrString = string.split(" ")
+    for (var i = 0; i < arrString.length; i++){
+        if (arrString[i] === word){
+            return true
+        }
+    }
+  return false
 }
 
 //////////////////////////////////////////////////////////////////////

@@ -1,33 +1,57 @@
 //////////////////////////////////////////////////////////////////////
-// Function 1 - Object Values ////////////////////////////////////////
+// Function 1 - Object Values //////////////////////////////////////// //13
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-
+    var arrReturn = [];
+    for(var key in object){
+        arrReturn.push(object[key]);
+    }
+    return arrReturn
 } 
 
 //////////////////////////////////////////////////////////////////////
-// Function 2 - Keys to String ///////////////////////////////////////
+// Function 2 - Keys to String ///////////////////////////////////////  //14
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+    var arrReturn = [];
+    for(var key in object){
+        arrReturn.push(key);
+    }
+    var objString = arrReturn.join(" ")
+    return objString
 }
 
 //////////////////////////////////////////////////////////////////////
-// Function 3 - Values to String /////////////////////////////////////
+// Function 3 - Values to String ///////////////////////////////////// //15
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    var arrReturn = [];
+    var stringBait = 'bait';
+    for(var key in object){
+        if(typeof object[key] === 'string'){
+            arrReturn.push(object[key]);
+        }
+    }
+    var objString = arrReturn.join(" ")
+    return objString
 }
 
 //////////////////////////////////////////////////////////////////////
-// Function 4 - Array or Object //////////////////////////////////////
+// Function 4 - Array or Object ////////////////////////////////////// //16
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection)){
+        return 'array'
+    } 
+    else if (typeof collection === 'object' &&
+    !Array.isArray(collection) &&
+    collection !== null){
+        return 'object'
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,7 +59,8 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    var stringCap = string.charAt(0).toUpperCase() + string.slice(1);
+    return stringCap
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -43,7 +68,11 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    var splitStr = string.toLowerCase().split(" ");
+    for (var i = 0; i < splitStr.length; i++){
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    return splitStr.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -51,7 +80,10 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    for (var key in object){
+        var target = object[key].charAt(0).toUpperCase() + object[key].substring(1);
+        return "Welcome " + target + "!"
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +91,10 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+        var arrObj = Object.values(object)
+        var name = arrObj[0].charAt(0).toUpperCase() + arrObj[0].substring(1);
+        var species = arrObj[1].charAt(0).toUpperCase() + arrObj[1].substring(1);
+        return name + " is a " + species
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -67,7 +102,12 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+    if (Object.values(object).indexOf('test1') > -1){
+       var arrNoise = Object.values(object)
+       var stringNoise = arrNoise.toString(' ')
+       return stringNoise 
+    }
+    return 'there are no noises'
 }
 
 //////////////////////////////////////////////////////////////////////

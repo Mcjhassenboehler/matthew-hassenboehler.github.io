@@ -127,7 +127,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+     object.friends.push(name)
+     return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -135,15 +136,33 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    if(!object.friends){
+        return false
+    }
+    return object.friends.includes(name)
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////// // butts
 
 function nonFriends(name, array) {
-
+    var nameList = [];
+    var result = [];
+    var current = null;
+    for(var i = 0; i < array.length; i++){         
+        if(name === array[i].name){
+            current = array[i];
+        }else{
+            nameList.push(array[i].name);
+        }
+    }
+    for(var i = 0; i < nameList.length; i++){
+        if(current.friends.indexOf(nameList[i]) == -1){
+            result.push(nameList[i]);
+        }
+    }
+    return result;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -151,7 +170,8 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+   object[key] = value;
+   return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -159,7 +179,11 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    for (var key in object){
+        if(array.includes(key)){
+          delete object[key]
+        }
+      }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -167,7 +191,8 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+    let uniqueChars = [...new Set(array)];
+    return uniqueChars
 }
 
 //////////////////////////////////////////////////////////////////////

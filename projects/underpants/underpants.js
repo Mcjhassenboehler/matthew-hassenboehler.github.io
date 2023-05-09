@@ -130,7 +130,7 @@ _.last = function(array, number){
         return array
     }else{
         var arr2 = [];
-        arr2 = array.slice(number)
+        arr2 = array.slice(0, number)
         return arr2
     }
 }
@@ -203,6 +203,7 @@ _.each = function(collection, func){
             // invoke the function on each element
             func(collection[i], i, collection);
         }
+        // if collection is an object
     } else {
         for (var key in collection){
             func(collection[key], key, collection)
@@ -222,12 +223,15 @@ _.each = function(collection, func){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-// _.unique = function(array){
-//     var newArray = [];
-//     for (var i = 0; i < array.length; i++){
-//         if (array[i] === )
-//     }
-// }
+_.unique = function(array){
+    var uniqueArray = [];
+    for (var i = 0; i < array.length; i++){
+        if (i === _.indexOf(array, array[i])){
+            uniqueArray.push(array[i])
+        }
+    }
+    return uniqueArray
+}
 
 
 /** _.filter
@@ -246,7 +250,16 @@ _.each = function(collection, func){
 *   use _.each in your implementation
 */
 
-
+_.filter = function(array, func){
+    var newArray = [];
+    for (var i = 0; i < array.length; i++){
+        func(array[i], i, array);
+        if (func(array[i], i, array)){
+            newArray.push(array[i]);
+        }
+    }
+    return newArray
+}
 
 
 /** _.reject
@@ -262,7 +275,16 @@ _.each = function(collection, func){
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
-
+_.reject = function(array, func){
+    var rejectArray = [];
+    for (var i = 0; i < array.length; i++){
+        func(array[i], i, array)
+        if (!func(array[i], i, array)){
+            rejectArray.push(array[i]);
+        }
+    }
+    return rejectArray
+}
 
 
 /** _.partition
@@ -284,7 +306,18 @@ _.each = function(collection, func){
 }
 */
 
-
+_.partition = function(array, func){
+    var newArray = [[], []];
+    for (var i = 0; i < array.length; i++){
+        func(array[i], i, array);
+        if (func(array[i], i, array)){
+            newArray[0].push(array[i]);
+        }else if (!func(array[i], i, array)){
+            newArray[1].push(array[i])
+        }
+    }
+    return newArray
+}
 
 
 /** _.map
@@ -303,7 +336,21 @@ _.each = function(collection, func){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func){
+    var funcArray = [];
+    if (Array.isArray(collection)){
+        for (var i = 0; i < collection.length; i++){
+            funcArray.push(func(collection[i], i, collection))
 
+        }
+    } else {
+        for (var key in collection){
+            func(collection[key], key, collection)
+            
+        }
+    }
+    return funcArray
+}
 
 
 /** _.pluck

@@ -152,7 +152,14 @@ _.last = function(array, number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
-
+_.indexOf = function(array, value){
+    for (var i = 0; i < array.length; i++){
+        if (value === array[i]){
+            return i
+        }
+    }
+    return -1
+}
 
 
 /** _.contains
@@ -170,8 +177,7 @@ _.last = function(array, number){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
-
-
+_.contains = (array, value) => (array.includes(value)) ? true : false;
 
 /** _.each
 * Arguments:
@@ -216,7 +222,12 @@ _.each = function(collection, func){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-
+// _.unique = function(array){
+//     var newArray = [];
+//     for (var i = 0; i < array.length; i++){
+//         if (array[i] === )
+//     }
+// }
 
 
 /** _.filter

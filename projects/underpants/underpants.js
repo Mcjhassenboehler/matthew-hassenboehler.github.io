@@ -130,7 +130,7 @@ _.last = function(array, number){
         return array
     }else{
         var arr2 = [];
-        arr2 = array.slice(0, number)
+        arr2 = array.slice(array.length - number, array.length)
         return arr2
     }
 }
@@ -344,9 +344,10 @@ _.map = function(collection, func){
 
         }
     } else {
+        var keys = Object.keys(collection);
+        var values = Object.values(collection);
         for (var key in collection){
-            func(collection[key], key, collection)
-            
+            funcArray.push(func(collection[key], key, collection))
         }
     }
     return funcArray

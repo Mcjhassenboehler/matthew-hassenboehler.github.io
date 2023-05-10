@@ -179,6 +179,7 @@ _.indexOf = function(array, value){
 
 _.contains = (array, value) => (array.includes(value)) ? true : false;
 
+
 /** _.each
 * Arguments:
 *   1) A collection
@@ -401,7 +402,34 @@ _.pluck = function(array, property){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-
+_.every = function(collection, func){
+    if (typeof func !== 'function'){
+        for (let j = 0; j < collection.length; j++){
+            if (!collection[j]){
+                return false
+            }
+        }
+        return true
+    }
+    if (Array.isArray(collection)){
+        for (let i = 0; i < collection.length; i++){
+            func(collection[i], i, collection)
+            if (!func(collection[i], i, collection)){
+                return false
+            }
+        }
+    }else {
+        var keys = Object.keys(collection);
+        var values = Object.values(collection);
+        for (var key in collection){
+            func(collection[key], key, collection)
+            if (!func(collection[key], key, collection)){
+                return false
+            }
+        }
+    }
+    return true
+}
 
 
 /** _.some
@@ -425,7 +453,38 @@ _.pluck = function(array, property){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
-
+_.some = function(collection, func){
+    if (typeof func !== 'function'){
+        for (let j = 0; j < collection.length; j++){
+            if (!collection[j]){
+                return false
+            }
+        }
+        return true
+    }
+    if (Array.isArray(collection)){
+        for (let i = 0; i < collection.length; i++){
+            func(collection[i], i, collection)
+            if (func(collection[i], i, collection)){
+                return true
+            }
+        }
+    }else if(!Array.isArray(collection)){
+        var keys = Object.keys(collection);
+        var values = Object.values(collection);
+        for (var key in collection){
+            func(collection[key], key, collection)
+            if (func(collection[key], key, collection)){
+                return true
+            }
+        }
+    }
+    else 
+    if(collection === true){
+        return true
+    }
+    return false
+}
 
 
 /** _.reduce
@@ -447,7 +506,25 @@ _.pluck = function(array, property){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
-
+_.reduce = function(array, func, seed){
+    let result;
+    // determine if seed was not passed in
+    if (seed === undefined){
+        // use the first element of the collection as seed value
+        result = array[0];
+        for (let i = 1; i < array.length; i++){
+            // reassign result to func invocation
+            result = func(result, array[i], i, array);
+            //.             ?      item   index  collection
+        }
+    }else {
+        result = seed;
+        for (let i = 0; i < array.length; i++){
+            result = func(result, array[i], i, array)
+        }
+    }
+    return result;
+}
 
 
 /** _.extend
@@ -464,6 +541,10 @@ _.pluck = function(array, property){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = (obj1, ...obj) => Object.assign(obj1, ...obj)
+
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

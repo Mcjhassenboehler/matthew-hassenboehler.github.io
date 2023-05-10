@@ -365,7 +365,19 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-
+_.pluck = function(array, property){
+    var result = [];
+     _.map(array, (func) => {
+        var keys = Object.keys(func);
+        var value = Object.values(func);
+        for (var i = 0; i < keys.length; i++){
+            if (keys[i] === property){
+                result.push(value[i]);
+            }
+        }
+     });
+     return result
+}
 
 
 /** _.every

@@ -3,8 +3,8 @@
  * 
  * 
  * 0. Variables in JavaScript are used to store and manipulate data, acting as containers that hold values such as numbers, strings, objects, or functions.
- * Variables in JavaScript are dynamically typed, meaning their types can change during runtime, allowing flexibility in working with different types of data.
- * Variables must be assigned a value before they can be used. If a variable is declared but not assigned a value, it will have the value undefined until assigned a different value.
+ * Variables are dynamically typed, meaning their types can change during runtime, allowing flexibility in working with different types of data.
+ * They must be assigned a value before they can be used. If a variable is declared but not assigned a value, it will have the value undefined until assigned a different value.
  * We can also reassign certain variables depending on their declaration type.
  * 
  * 1. Variables are declared using the var, let, or const keywords, indicating different scoping and mutability rules.
@@ -72,3 +72,10 @@ console.log(const3); // => ReferenceError: const3 is not defined
 // Hoisting is JavaScript's default behavior of moving declarations to the top.
 x = 5;
 var x
+/**
+ *     After Hoisting would read
+ * 
+ *  var x
+ *  x = 5
+ *
+ */

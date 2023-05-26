@@ -113,4 +113,71 @@ console.log(undefine); // => logs undefined
 
 
 // #8 Null //
-// 
+// Represents the absence of any object value.
+// It is a special value that indicates the intentional absence of an object value.
+// Treated as falsy for boolean operations.
+// Written as just null.
+
+let oof = null;
+console.log(oof); // => logs null
+
+
+// #9 NaN // 
+// Value representing Not-A-Number.
+// It is not equal to any value, not even itself
+
+console.log(NaN === NaN); // => logs false
+
+// #10 Infinity and -Infinity //
+// Infinity represents a value that is greater than any other number in Javascript
+// While -Infinity represents a value that is smaller than any other number.
+console.log(5 / 0);       // => logs infinity
+console.log(-10 / 0);     // => logs -infinity
+
+// #11 Simple and Complex Data Types //
+// A. Simple //
+// Simple data types include: Strings, Numbers, Booleans, Null, and Undefined
+// Simple data types are immutable, meaning their values cannot be changed once assigned.
+// When you perform operations on simple data types, new values are created rather than modifying the existing ones.
+let num = 42;
+num = 24; // A new value (24) is assigned to the variable `num`.
+
+// B. Complex //
+// Complex data types include Objects, Arrays, Functions, and a few others.
+// Complex data types are mutable, meaning their values can be modified after creation. 
+// When you assign a complex data type to a variable, the variable holds a reference to the location in memory where the data is stored, rather than the actual data itself. 
+// Modifying the data through one reference will affect all other references to the same data. 
+
+let obj1 = { name: "John" };
+let obj2 = obj1; // Both `obj1` and `obj2` reference the same object.
+obj2.name = "Jane"; // Modifying `obj2` also modifies `obj1`.
+
+console.log(obj1.name); // Output: "Jane"
+
+// 12. Passing by Copy/Value and Passing by Refrence //
+// A. Pass by Copy/Value //
+// When you pass a simple data type to a function, a copy of the value is created and passed to the function.
+// Any changes made to the copy within the function do not affect the original value outside of it. 
+
+function updateValue(value) {
+    value = 42; // Modifying the copy inside the function
+    console.log(value); // Output: 42
+  }
+  let numbers = 10;
+  updateValue(numbers);
+  console.log(numbers); // Output: 10 (original value is unchanged)
+  
+  // B. Pass by Refrence //
+  // When you pass a complex data type to a function, a reference to the original value is passed.
+  // This means that both the original value and the parameter within the function point to the same memory location.
+  // As a result, modifications made to the value within the function affect the original value.
+
+  function updateName(person) {
+    person.name = "Jane"; // Modifying the object property
+    console.log(person.name); // Output: "Jane"
+  }
+  
+  let obj = { name: "John" };
+  updateName(obj);
+  console.log(obj.name); // Output: "Jane" (original object is modified)
+  

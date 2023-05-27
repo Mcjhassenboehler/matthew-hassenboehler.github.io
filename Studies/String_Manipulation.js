@@ -5,11 +5,17 @@
  *     It is a fundamental task as strings are a common data type used to represent text and characters.
  *     String manipulation allows you to perform various operations on strings to achieve specific outcomes.   
  * 
+ *  1. String Manipulation through Operators
+ *     One way to manipulate strings is through the use of operators.
+ *     Operators like + can be used to concatenate two or more strings together, combining them into a single string.
+ * 
+ *  2. String Manipulation through Methods
+ *     String manipulation using string methods involves utilizing the built-in methods provided by JavaScript to perform operations on strings.
+ *     These methods allow for more sophisticated string manipulation with a wide range of functionalities.
+ * 
  */
 
 // 1. String Manipulation through Operators //
-// One way to manipulate strings is through the use of operators.
-// Operators like + can be used to concatenate two or more strings together, combining them into a single string.
 
 // A. Cocatenation Operator //
 // The concatenation operator (+) is used to concatenate two or more strings together.
@@ -28,9 +34,6 @@ console.log(assignOp += ' World'); // => 'Hello World'
 console.log('Hello'[0]); // => returns 'H'
 
 // 2. String Manipulation through Methods //
-// String manipulation using string methods involves utilizing the built-in methods provided by JavaScript to perform operations on strings.
-// These methods allow for more sophisticated string manipulation with a wide range of functionalities.
-
 
 // A. Concat //
 // Expressed as string1.concat(string2); 
@@ -50,5 +53,22 @@ let slice = ('Hello World');
 
 console.log(slice.slice(1, 5)); // => 'ello'
 
-// There are many more different methods as well like toUpperCase, toLowerCase, splice, replace, and so on.
+// C. toUpperCase //
+// Expressed as string.toUpperCase();
+// Turns the string into all upper case
 
+let newWord = 'hello';
+
+let upper = newWord.toUpperCase();
+
+console.log(upper); // => 'HELLO'
+
+// D. toLowerCase //
+// Expressed as string.toLowerCase();
+// Turns the string into all lower case
+
+let newWord2 = 'HELLO';
+
+let lower = newWord2.toLowerCase();
+
+console.log(lower); // => 'hello'

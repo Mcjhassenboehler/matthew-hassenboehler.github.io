@@ -5,12 +5,23 @@
  *     They allow you to perform mathematical calculations, compare values, assign values, and more.
  *     The types of Operators we use are Assignment, Arithmetic, Comparison, Logical, Unary, and Ternary.
  * 
+ *  1. Assignment Operators are used to assign values to variables.
+ *     Also used to modify values based on arithmetic calculations.
+ * 
+ *  2. Arithmetic Operators are used for performing mathematical calculations.
+ *     Also used for finding remainers (Modulo) and adding increments.   
+ * 
+ *  3. Comparison Operators are used to compare values and return a boolean result.
+ * 
+ *  4. Logical Operators are used to combine or negate boolean values.
+ * 
+ *  5. Unary Operators act on a single operand to perform operations like type conversion, negation, or increment/decrement.
+ * 
+ *  6. Ternary Operator provides a shorthand for conditional expressions, allowing for a compact if-else statement in a single line.
  * 
  */
 
 // 1. Assignment Operators //
-// Used to assign values to variables
-// Also used to modify values based on arithmetic calculations.
 
 // A. Simple Assignment //
 // Expressed using the '=' character.
@@ -57,8 +68,6 @@ console.log(modulo %= 2); // => 1
 
 
 // 2. Arithmetic Operators //
-// Arithmetic operators are used for performing mathematical calculations.
-// Also used for finding remainers (Modulo) and adding increments.
 
 // A. Addition //
 // Expressed using the '+' character.
@@ -72,32 +81,32 @@ console.log(4 + 5); // => logs 9
 
 console.log(6 - 1); // => logs 5
 
-// A. Multiplication //
+// B. Multiplication //
 // Expressed using the '*' character.
 // Used to multiply values.
 
 console.log(4 * 5); // => logs 20
 
-// A. Division //
+// C. Division //
 // Expressed using the '/' character.
 // Used to divide values.
 
 console.log(20 / 5); // => logs 4
 
-// A. Modulo //
+// D. Modulo //
 // Expressed using the '%' character.
 // Used to return the remainder of a division operation between two numbers.
 
 console.log(10 % 3); // => logs 1
 
-// A. Increment //
+// E. Increment //
 // Expressed using the '++' character.
 // Used to increase the value of a variable by 1.
 
 let increment = 4;
 console.log(++increment); // => logs 5
 
-// A. Decrement //
+// F. Decrement //
 // Expressed using the '--' character.
 // Used to decrease the value of a variable by 1.
 
@@ -106,7 +115,6 @@ console.log(--decrement); // => logs 3
 
 
 // 3. Comparison Operators //
-// These Operators are used to compare values and return a boolean result.
 
 // A. Equal to //
 // Expressed using the '==' or '===' characters.
@@ -155,7 +163,6 @@ console.log(7 >= 7); // => true
 console.log(7 <= 10); // => true
 
 // 4. Logical Operators //
-// Logical operators are used to combine or negate boolean values.
 
 // A. And //
 // Expressed using the '&&' characters.
@@ -184,8 +191,6 @@ if (1 === 1 || 1 === '1'){
 
 
 // 5. Unary Operators //
-// Act on a single operand to perform operations like type conversion, negation, or increment/decrement.
-
 
 // A. Not //
 // Expressed using the '!' character.
@@ -217,7 +222,6 @@ console.log(-plus); // => -10 (number)
 
 
 // 6. Ternary Operator//
-// Provides a shorthand for conditional expressions, allowing for a compact if-else statement in a single line.
 
 let age = 25;
 let isAdult = age >= 18 ? "Yes" : "No";

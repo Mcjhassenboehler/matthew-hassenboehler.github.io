@@ -50,10 +50,11 @@ console.log(let1); // => 1
 let1 = 2;
 console.log(let1); // => 2
 
-function l(){
-    let let3 = 0;
-    return let3
-}
+if (true) {
+    let let3 = 'block scoped';
+    console.log(let3); // =>  'block scoped'
+  }
+
 console.log(let3); // => ReferenceError: let3 is not defined
 
 // constis block-scoped and does not allow reassignment, making it a constant value.
@@ -62,20 +63,29 @@ console.log(const1); // => 1
 const1 = 2;
 console.log(const1); // => TypeError: Assignment to constant variable.
 
-function l(){
-    const const3 = 0;
-    return const3
-}
+if (true) {
+    let const3 = 'block scoped';
+    console.log(const3); // => prints 'block scoped'
+  }
+
 console.log(const3); // => ReferenceError: const3 is not defined
 
 // 5. Hoisting //
 // Hoisting is JavaScript's default behavior of moving declarations to the top.
+  // Only variables defined by var are hoisted however
+
+console.log(x); // => undefined becasue var x is hoisted to the top
+let y = 7;
 x = 5;
 var x
+
 /**
  *     After Hoisting would read
  * 
  *  var x
- *  x = 5
- *
+ * console.log(x);
+ * let y = 7;
+ * x = 5
+ * 
  */
+

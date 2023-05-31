@@ -113,7 +113,7 @@ function local (){
     console.log(here3); // => "Hi from the local scope!"
 }
 
-console.log(here3); // => undefined, becuase the global scope cannot access local scope and let/const are block scope
+console.log(here3); // => ReferenceError: here3 is not defined, becuase the global scope cannot access local scope and let/const are block scope
 
 
 // 7. Closures //

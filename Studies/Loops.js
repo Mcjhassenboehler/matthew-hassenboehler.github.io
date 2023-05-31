@@ -22,7 +22,7 @@
 // 1. While, For, and For-in loops/
 
 // A. For loops //
-// In for loops we have a variable that is assigned a starting point, an ending point, and an incrementer
+// In for loops we have a variable that is assigned a starting point, a specified ending point, and an incrementer
 // Here we are going to start from 0 and count upwards
 
 for (let i = 0; i < 10; i++){ // 0 is our starting point, i being greater than or equal to 10 stops it, and i increases by 1 on each iteration 
